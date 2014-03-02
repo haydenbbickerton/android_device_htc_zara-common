@@ -3,7 +3,7 @@
 set -e
 
 if [ $# -eq 0 ]; then
-  SRC=/home/hayden/m7_base/
+  SRC=/home/hayden/zaracl_base/
 else
   if [ $# -eq 1 ]; then
     SRC=$1
@@ -36,7 +36,7 @@ if [ -f ../$DEVICE/device-proprietary-files.txt ]; then
   done
 fi
 
-for FILE in `egrep -v '(^#|^$)' ../m7-common/proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../zara-common/proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`
   if [ ! -d $BASE/$DIR ]; then
@@ -49,9 +49,9 @@ for FILE in `egrep -v '(^#|^$)' ../m7-common/proprietary-files.txt`; do
   fi
 done
 
-BASE=../../../vendor/$VENDOR/m7-common/proprietary
+BASE=../../../vendor/$VENDOR/zara-common/proprietary
 rm -rf $BASE/*
-for FILE in `egrep -v '(^#|^$)' ../m7-common/common-proprietary-files.txt`; do
+for FILE in `egrep -v '(^#|^$)' ../zara-common/common-proprietary-files.txt`; do
   echo "Extracting /system/$FILE ..."
   DIR=`dirname $FILE`
   if [ ! -d $BASE/$DIR ]; then
@@ -64,4 +64,4 @@ for FILE in `egrep -v '(^#|^$)' ../m7-common/common-proprietary-files.txt`; do
   fi
 done
 
-./../m7-common/setup-makefiles.sh
+./../zara-common/setup-makefiles.sh
