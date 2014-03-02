@@ -129,14 +129,14 @@ lib/libmmjpeg.so
 lib/libmmstillomx.so
 lib/liboemcamera.so
 lib/libposteffect.so
-#lib/libwriteback.so
+lib/libwriteback.so
 
 # Camera firmware
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 
 # GPS
-#lib/libgeofence.so
+lib/libgeofence.so
 lib/libloc_api_v02.so
 
 # Graphics
@@ -163,18 +163,18 @@ etc/firmware/vidc.mdt
 etc/firmware/vidc_1080p.fw
 
 # Irda
-#app/CIRModule.apk
+app/CIRModule.apk
 bin/cir_fw_update
 etc/cir.img
-#framework/htcirlibs.jar
+framework/htcirlibs.jar
 lib/libhtcirinterface_jni.so
 
 # Keystore
-#vendor/firmware/keymaster/keymaster.b00
-#vendor/firmware/keymaster/keymaster.b01
-#vendor/firmware/keymaster/keymaster.b02
-#vendor/firmware/keymaster/keymaster.b03
-#vendor/firmware/keymaster/keymaster.mdt
+vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster/keymaster.mdt
 
 # Media
 lib/libI420colorconvert.so
@@ -210,7 +210,7 @@ vendor/lib/libwvm.so
 vendor/lib/libWVStreamControlAPI_L1.so
 
 # WLAN firmware
-#etc/firmware/BCM4335B0_002.001.006.0191.0194.hcd
+etc/firmware/BCM4335B0_002.001.006.0191.0194.hcd
 etc/firmware/fw_bcm4335_apsta_b0.bin
 etc/firmware/fw_bcm4335_b0.bin
 etc/firmware/fw_bcm4335_p2p_b0.bin
