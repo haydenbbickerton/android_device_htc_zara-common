@@ -1,6 +1,6 @@
 # Executables
-bin/akmd
-bin/ks
+#bin/akmd
+#bin/ks
 bin/mm-qcamera-daemon
 bin/mpdecision
 bin/thermald
@@ -14,12 +14,12 @@ etc/tfa/fm_l.config
 etc/tfa/fm_l.eq
 etc/tfa/fm_l.preset
 etc/tfa/fm.preset
-etc/tfa/playbackbeats.config
-etc/tfa/playbackbeats.eq
-etc/tfa/playbackbeats_l.config
-etc/tfa/playbackbeats_l.eq
-etc/tfa/playbackbeats_l.preset
-etc/tfa/playbackbeats.preset
+#etc/tfa/playbackbeats.config
+#etc/tfa/playbackbeats.eq
+#etc/tfa/playbackbeats_l.config
+#etc/tfa/playbackbeats_l.eq
+#etc/tfa/playbackbeats_l.preset
+#etc/tfa/playbackbeats.preset
 etc/tfa/playback.config
 etc/tfa/playback.eq
 etc/tfa/playback_l.config
@@ -73,7 +73,7 @@ lib/libaudcal.so
 lib/libcsd-client.so
 
 # Camera
-lib/hw/vendor-camera.msm8960.so
+lib/hw/camera.msm8960.so
 lib/libBeautyChat.so
 lib/libcameraasd.so
 lib/libcameraface.so
@@ -129,14 +129,14 @@ lib/libmmjpeg.so
 lib/libmmstillomx.so
 lib/liboemcamera.so
 lib/libposteffect.so
-lib/libwriteback.so
+#lib/libwriteback.so
 
 # Camera firmware
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 
 # GPS
-lib/libgeofence.so
+#lib/libgeofence.so
 lib/libloc_api_v02.so
 
 # Graphics
@@ -163,18 +163,18 @@ etc/firmware/vidc.mdt
 etc/firmware/vidc_1080p.fw
 
 # Irda
-app/CIRModule.apk
-bin/cir_fw_update
-etc/cir.img
-framework/htcirlibs.jar
-lib/libhtcirinterface_jni.so
+#app/CIRModule.apk
+#bin/cir_fw_update
+#etc/cir.img
+#framework/htcirlibs.jar
+#lib/libhtcirinterface_jni.so
 
 # Keystore
-vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster/keymaster.mdt
+#vendor/firmware/keymaster/keymaster.b00
+#vendor/firmware/keymaster/keymaster.b01
+#vendor/firmware/keymaster/keymaster.b02
+#vendor/firmware/keymaster/keymaster.b03
+#vendor/firmware/keymaster/keymaster.mdt
 
 # Media
 lib/libI420colorconvert.so
@@ -197,20 +197,20 @@ etc/firmware/tzapps.mdt
 lib/libqc-opt.so
 
 # Sensors
-lib/hw/sensors.default.so
-lib/libimu.so
-lib/libmllite.so
-lib/libmlplatform.so
-lib/libmpl.so
-lib/libmpl_jni.so
+lib/hw/sensors.msm8960.so
+#lib/libimu.so
+#lib/libmllite.so
+#lib/libmlplatform.so
+#lib/libmpl.so
+#lib/libmpl_jni.so
 
 # Widevine
 lib/libQSEEComAPI.so
 vendor/lib/libwvm.so
-vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libWVStreamControlAPI_L3.so
 
 # WLAN firmware
-etc/firmware/BCM4335B0_002.001.006.0191.0194.hcd
-etc/firmware/fw_bcm4335_apsta_b0.bin
-etc/firmware/fw_bcm4335_b0.bin
-etc/firmware/fw_bcm4335_p2p_b0.bin
+etc/firmware/BCM4334B0_002.001.013.0942.0949.hcd
+etc/firmware/fw_bcm4334_apsta.bin
+etc/firmware/fw_bcm4334.bin
+etc/firmware/fw_bcm4334_p2p.bin

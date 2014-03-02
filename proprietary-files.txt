@@ -1,9 +1,9 @@
 # Device-specific proprietary files sharing a common name
 
 # Executables
-bin/efsks
+#bin/efsks
 bin/netmgrd
-bin/qcks
+#bin/qcks
 bin/qmuxd
 
 # Qualcomm/HTC common libs
