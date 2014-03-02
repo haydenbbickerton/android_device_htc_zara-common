@@ -27,28 +27,30 @@
 # inherit from common msm8960
 -include device/htc/msm8960-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/m7-common/include
+TARGET_SPECIFIC_HEADER_PATH := device/htc/zara-common/include
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80600000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01400000
-TARGET_KERNEL_CONFIG := cyanogenmod_m7_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/m7
+TARGET_KERNEL_CONFIG := cyanogenmod_zara_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/zaracl
+# Keep this as a fallback
+TARGET_PREBUILT_KERNEL := device/htc/zaracl/kernel
 
 # Audio
 BOARD_USES_FLUENCE_INCALL := true  # use DMIC in call only
 BOARD_USES_SEPERATED_AUDIO_INPUT := true  # use distinct voice recognition use case
 BOARD_USES_SEPERATED_VOICE_SPEAKER := true  # use distinct voice speaker use case
 BOARD_USES_SEPERATED_VOIP := true  # use distinct VOIP use cases
-BOARD_AUDIO_AMPLIFIER := device/htc/m7-common/libaudioamp
+BOARD_AUDIO_AMPLIFIER := device/htc/zara-common/libaudioamp
 BOARD_HAVE_HTC_CSDCLIENT := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m7-common/bluetooth
-BOARD_BLUEDROID_VENDOR_CONF := device/htc/m7-common/bluetooth/libbt_vndcfg.txt
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/zara-common/bluetooth
+BOARD_BLUEDROID_VENDOR_CONF := device/htc/zara-common/bluetooth/libbt_vndcfg.txt
 BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # Camera
@@ -66,7 +68,7 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/
 BOARD_HAVE_NEW_QC_GPS := true
 
 # Tuning
-BOARD_HARDWARE_CLASS := device/htc/m7-common/cmhw
+BOARD_HARDWARE_CLASS := device/htc/zara-common/cmhw
 
 # Wifi
 BOARD_WLAN_DEVICE                := bcmdhd
@@ -78,11 +80,11 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
 WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
 WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcmdhd.ko"
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcm4335_b0.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcm4335_apsta_b0.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/firmware/fw_bcm4335_p2p_b0.bin"
-WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/firmware/fw_bcm4335_b0.bin nvram_path=/system/etc/calibration"
-WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/firmware/fw_bcm4335_apsta_b0.bin nvram_path=/system/etc/calibration"
+WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcm4334.bin"
+WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcm4334_apsta.bin"
+WIFI_DRIVER_FW_PATH_P2P          := "/system/etc/firmware/fw_bcm4334_p2p.bin"
+WIFI_DRIVER_MODULE_ARG           := "firmware_path=/system/etc/firmware/fw_bcm4334.bin nvram_path=/system/etc/calibration"
+WIFI_DRIVER_MODULE_AP_ARG        := "firmware_path=/system/etc/firmware/fw_bcm4334_p2p.bin nvram_path=/system/etc/calibration"
 WIFI_BAND                        := 802_11_ABG
 
 # Filesystem
@@ -94,7 +96,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # SElinux
 BOARD_SEPOLICY_DIRS += \
-    device/htc/m7-common/sepolicy
+    device/htc/zara-common/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     file_contexts \
@@ -129,10 +131,10 @@ BOARD_SEPOLICY_UNION += \
     zygote.te
 
 # Custom Recovery
-ifeq ($(TARGET_DEVICE),m7spr)
-TARGET_RECOVERY_FSTAB := device/htc/m7-common/rootdir/etc/fstab.qcom.spr
+ifeq ($(TARGET_DEVICE),zaracl)
+TARGET_RECOVERY_FSTAB := device/htc/zara-common/rootdir/etc/fstab.zara
 else
-TARGET_RECOVERY_FSTAB := device/htc/m7-common/rootdir/etc/fstab.qcom.gsm
+TARGET_RECOVERY_FSTAB := device/htc/zara-common/rootdir/etc/fstab.qcom.gsm
 endif
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -144,4 +146,4 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/htc_lpm/lpm_mode
 
 # inherit from the proprietary version
--include vendor/htc/m7-common/BoardConfigVendor.mk
+-include vendor/htc/zara-common/BoardConfigVendor.mk
