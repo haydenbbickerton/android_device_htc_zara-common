@@ -1,0 +1,4 @@
+AOSP 4.2.2 device-common configuration for the HTC Desire 601(zaracl), based off of the source for the HTC One(m7spr).
+
+Status: It will build to completion, but it will not boot. I'm 95% positive that this is because of the ramdisk being
+messed up. Currently working on that. I have modified the mkbootimg to work with the zaracl, see it here - https://github.com/haydenbbickerton/zara_mkbootimg
